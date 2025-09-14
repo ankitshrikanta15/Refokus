@@ -1,29 +1,28 @@
-import Cards from "./components/Cards"
-import Footer from "./components/Footer"
-import Marquees from "./components/Marquees"
-import NavBar from "./components/NavBar"
-import Products from "./components/Products"
-import SplineComponent from "./components/SplineComponent"
-import Stripes from "./components/Stripes"
-import Work from "./components/Work";
-import LocomotiveScroll from 'locomotive-scroll';
+import { Link, Route, Routes } from "react-router-dom"
+import Home from "./components/Home/Home"
+import Contact from "./components/Contact/Contact"
+import Demo from "./components/Projects/Demo"
+import Hotel from "./components/Projects/Hotel"
+import RevitProjectTemplate from "./components/Projects/RevitProjectTemplate"
 
 
 
 
 
 const App = () => {
-  const locomotiveScroll = new LocomotiveScroll();
+  // const locomotiveScroll = new LocomotiveScroll();
+
+
   return (
-    <div className="w-full bg-zinc-900 text-white">
-      <NavBar />
-      <Work />
-      <Stripes />
-      <Products />
-      <Marquees />
-      <Cards />
-      <Footer />
-      <SplineComponent />
+    <div className="bg-[#FFFFFF] text-[#261B14]">
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/project" element={<Demo />} />
+        <Route path="/hotel" element={<Hotel />} />
+        <Route path="/revit-template" element={<RevitProjectTemplate />} />
+      </Routes>
     </div>
   )
 }
